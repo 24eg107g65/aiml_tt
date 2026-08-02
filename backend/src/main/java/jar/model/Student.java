@@ -11,11 +11,19 @@ import jakarta.persistence.Table;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private Long id;
     private String name;
-    @Column(unique=true)
+    @Column(unique = true)
     private String email;
     private String ip;
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return this.name;
@@ -25,9 +33,9 @@ public class Student {
         return this.email;
     }
 
-  public String getIp() {
-    return this.ip;
-}
+    public String getIp() {
+        return this.ip;
+    }
 
     public void setName(String name) {
         this.name = name;
